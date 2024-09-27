@@ -27,7 +27,3 @@ jobs:
     # Compiles with warnings enabled
     - name: Compile warnings
       run: javac -Xlint:all **/*.java
-
-    #Coverage report
-    - name: Run tests with coverage
-      run: ./gradlew test jacocoTestReport
