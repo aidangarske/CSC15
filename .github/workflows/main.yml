@@ -1,4 +1,4 @@
-name: Android CI
+name: CI
 
 on:
   push:
@@ -19,6 +19,8 @@ jobs:
       with:
         java-version: 11
         distribution: temurin
-
-    - name: Compile Java program
-      run: javac Homework/AmusmentParkGarske.java
+        
+    # Compiles all java files in any directory under CSC15
+    - name: Compile java
+      run: javac **/*.java
+      
