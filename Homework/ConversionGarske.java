@@ -2,6 +2,9 @@
 Name: Aidan Garske
 Date: 9/16/24
 I gave myself a 100% because...
+I hope it was okay that I made another method instead
+of just adding a column for another conversion I thought
+it would be nicer than adding a column with no relevance.
 - Properly named my Class as 'ConversionGarske'       5pts
 - Proper indention followed                           5pts
 - Descriptive well placed comments                    5pts
@@ -22,13 +25,13 @@ fahrenheit => Celciues
 fahrenheit => Kelvin
 and displays the results in table form.
 */
-public class ConversionGarske1
+public class ConversionGarske
 {
     /* Conversion constants */
     public static final double LITTER_CONVERSION = 3.78;
     public static final double OUNCE_CONVERSION = 128;
     public static final double FAHRENHEIT1_CONVERSION = 32;
-    public static final double FAHRENHEIT2_CONVERSION = .555;
+    public static final double FAHRENHEIT2_CONVERSION = .556;
     public static final double KELVIN_CONVERSION = 273.15;
 
 
@@ -104,6 +107,7 @@ public class ConversionGarske1
 
         for (fahr = 99; fahr >= 12; fahr = fahr - 3)
         {
+
             /* Calculate celcius from fahrenheit */
             cel = (fahr - FAHRENHEIT1_CONVERSION) * FAHRENHEIT2_CONVERSION;
             /* Calculate kelvin from celcius */
