@@ -20,7 +20,11 @@ jobs:
         java-version: 22
         distribution: temurin
         
-    # Compiles all java files in any directory under CSC15
+    # Compiles all java for .java
     - name: Compile java
       run: javac **/*.java
+
+    # Runs JUint test for .class
+    - name: Run JUnit tests
+      run: java -cp ".:path-to-junit.jar" org.junit.runner.JUnitCore **/*.class
       
