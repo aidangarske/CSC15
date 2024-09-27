@@ -1,14 +1,14 @@
 # CSC15
 Aidan Garskes repositiry for CSC15 course work, notes, and projects.
 
-##Homework
+## Homework
 src code for my homework
 
-##InClass
+## InClass
 src code in class assignments / practice
 
-##Lab
+## Lab
 Lab practice
 
-##Notes
+## Notes
 Markdown class notes
