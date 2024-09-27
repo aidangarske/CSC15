@@ -32,6 +32,8 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean install
+      working-directory: ./CSC15
 
     - name: Run Java Application
       run: java -jar target/my-java-app-1.0-SNAPSHOT.jar
+      working-directory: ./CSC15
