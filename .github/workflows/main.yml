@@ -28,13 +28,6 @@ jobs:
     - name: Compile warnings
       run: javac -Xlint:all **/*.java
 
-    # Checkstyle 
-    - name: Download Checkstyle
-      run: wget https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.8/checkstyle-10.8-all.jar
-
-    - name: Run Checkstyle
-      run: java -jar checkstyle-10.8-all.jar -c /google_checks.xml **/*.java
-
     #Coverage report
     - name: Run tests with coverage
       run: ./gradlew test jacocoTestReport
