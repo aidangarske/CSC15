@@ -36,39 +36,35 @@ public class ConversionGarske1
     public static void main (String[] args)
     {
         displayDescription();
-        gallonConversion();
-        fahrenheitConversion();
-    }
-
-    /* Displays the header tilde string */
-    public static void displayTildeHeader()
-    {
-        for (int tilde = 1; tilde <= 40; tilde++)
-        {
-            System.out.print("~");
-        }
-
+        gallonConverter();
+        fahrenheitConverter();
     }
 
     /* Displays the description for program */
     public static void displayDescription()
     {
         /* description */
-        System.out.println("This is a simple program that converts: \n"       );
-        System.out.println("Gallons => Litters\nGallons => Ounces\n"          );
-        System.out.println("fahrenheit => Celciues\nfahrenheit => Kelvin\n"   );
-        System.out.println("It then displays the results in list form\n"      );
-
-        /* Tilde header */
+        displayTildeHeader();
+        System.out.println("\n| This Converter converts gallons to |");
+        System.out.println("| litters and ounces and fahrenheit  |");
+        System.out.println("| to celcius and kelvin. It then     |");
+        System.out.println("| displays the results in list form. |");
         displayTildeHeader();
     }
 
     /* Converts gallons to litters and ounces */
-    public static void gallonConversion()
+    public static void gallonConverter()
     {
         double gal; /* variable for gallons */
         double lit; /* variable for litters */
         double oz;  /* variable for ounces  */
+
+        System.out.println("\n~~~~~~~~~~~GALLON CONVERTER~~~~~~~~~~~");
+        System.out.println("|          Gallons => Litters        |");
+        System.out.println("|          Gallons => ounces         |");
+
+        /* Tilde header */
+        displayTildeHeader();
 
         /* Prints header */
         System.out.println("\nGallons\t\tLitters\t\tOunces");
@@ -85,20 +81,28 @@ public class ConversionGarske1
         }
 
         /* Prints footer */
-        System.out.println("~~~~~~~~~~END GALLON CONVERSION~~~~~~~~~~");
+        System.out.println("~~~~~~~~END GALLON CONVERSION~~~~~~~~~\n\n");
     }
 
     /* Converts to fahrenheit to celcius and kelvin */
-    public static void fahrenheitConversion()
+    public static void fahrenheitConverter()
     {
         double fahr; /* variable for fahrenheit */
         double cel;  /* varaible for celcius    */
         double kel;  /* cariable for kelvin     */
 
-        /* Prints header */
-        System.out.println("\nFahrenheit\t\tCelcius\t\tKelvin");
+        System.out.println("~~~~~~~~~~FAHRENHEIT CONVERTER~~~~~~~~");
+        System.out.println("|         Fahrenheit => Celcius      |");
+        System.out.println("|         Fahrenheit => Kelvin       |");
 
-        for (fahr = 97; fahr <= 100; fahr++)
+        /* Tilde header */
+        displayTildeHeader();
+
+        /* Prints header */
+
+        System.out.println("\nFahrenheit\tCelcius\t\tKelvin");
+
+        for (fahr = 99; fahr >= 12; fahr = fahr - 3)
         {
             /* Calculate celcius from fahrenheit */
             cel = (fahr - FAHRENHEIT1_CONVERSION) * FAHRENHEIT2_CONVERSION;
@@ -110,6 +114,15 @@ public class ConversionGarske1
         }
 
         /* Prints footer */
-        System.out.println("~~~~~~~~~~END FAHRENHEIT CONVERSION~~~~~~~~~~");
+        System.out.println("~~~~~~~END FAHRENHEIT CONVERSION~~~~~~\n");
+    }
+
+    /* Displays the header tilde string */
+    public static void displayTildeHeader()
+    {
+        for (int tilde = 1; tilde <= 38; tilde++)
+        {
+            System.out.print("~");
+        }
     }
 }
