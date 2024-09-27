@@ -18,7 +18,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -33,8 +32,6 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean install
-      working-directory: /Users/aidangarske/CSC15
 
     - name: Run Java Application
       run: java -jar target/my-java-app-1.0-SNAPSHOT.jar
-      working-directory: /Users/aidangarske/CSC15
