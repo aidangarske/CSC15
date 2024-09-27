@@ -32,8 +32,8 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean install
-      working-directory: ./CSC15
+      working-directory: ./  # Working directory is set to the root where pom.xml is located
 
     - name: Run Java Application
       run: java -jar target/my-java-app-1.0-SNAPSHOT.jar
-      working-directory: ./CSC15
+      working-directory: ./  # Ensure the JAR is located in the correct target directory
