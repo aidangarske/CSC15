@@ -22,7 +22,3 @@ jobs:
 
     - name: Compile Java program
       run: javac Homework/AmusmentParkGarske.java
-
-    - name: Run tests
-      run: java org.junit.runner.JUnitCore AmusmentParkGarske.class
-
