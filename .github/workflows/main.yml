@@ -19,12 +19,11 @@ jobs:
       with:
         java-version: 22
         distribution: temurin
-    - run: java **/*.class
         
     # Compiles all java for .java
     - name: Compile java
       run: javac **/*.java
 
     # Compiles with warnings enabled
-    - name: Compile warnings
+    - name: Compile java warnings
       run: javac -Xlint:all **/*.java
