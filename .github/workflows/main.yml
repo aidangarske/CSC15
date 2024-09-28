@@ -19,7 +19,7 @@ jobs:
       with:
         java-version: 22
         distribution: temurin
-    - run: java **/*.java
+    - run: java **/*.class
         
     # Compiles all java for .java
     - name: Compile java
