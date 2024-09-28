@@ -1,5 +1,5 @@
 # CSC15
-Aidan Garskes repositiry for CSC15 course work, notes, and projects.
+Aidan Garske's repositiry for CSC15 course work, notes, and projects.
 
 ## Homework
 src code for my homework
