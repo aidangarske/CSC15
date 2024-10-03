@@ -141,7 +141,7 @@ public class TravelGarske
         double pricePerCharge = kb.nextDouble();
         System.out.println("\nTraveling with your electric car:\n");
 
-        /* call `stops` and print return if valid input BAD_FUNC_ARG if not */
+        /* Call `stops` and print return if valid input BAD_FUNC_ARG if not */
         int stops = stops(distance, milePerCharge);
         if (stops < 0)
         {
@@ -151,7 +151,7 @@ public class TravelGarske
         else
             System.out.println("stops:\t" + stops);
 
-        /* call `travelHoursElecCar` and print return if valid input BAD_FUNC_ARG if not */
+        /* Call `travelHoursElecCar` and print return if valid input BAD_FUNC_ARG if not */
         double hours = travelHoursElecCar(stops, hoursPerStop, distance, speed);
         if (hours < 0)
         {
@@ -161,7 +161,7 @@ public class TravelGarske
         else
             System.out.println("hours:\t" + hours);
 
-        /* call `chargeCost` and print return if valid input BAD_FUNC_ARG if not */
+        /* Call `chargeCost` and print return if valid input BAD_FUNC_ARG if not */
         double cost = chargeCost(stops, pricePerCharge);
         if (cost < 0)
         {
