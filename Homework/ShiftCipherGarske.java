@@ -218,7 +218,7 @@ class ShiftCipher {
             |                   Encode  --> E                      |
             |                   Encode2 --> EE                     |
             |                   Decode  --> D                      |
-            |               Enter either E or D                    |
+            |               Enter either E, EE, or D               |
             ========================================================
             """);
     }
