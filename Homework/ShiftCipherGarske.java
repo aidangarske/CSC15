@@ -51,22 +51,6 @@ class ShiftCipher {
         }
     }
 
-    /* This method displays a menu so
-     * that the user can chose between
-     * decode and encode */
-    public static void menu() {
-        System.out.println("""
-            ========================================================
-            | This program uses a cipher shift to encode and decode|
-            | the users input. The options you can select are:     |
-            |                   Encode  --> E                      |
-            |                   Encode2 --> EE                     |
-            |                   Decode  --> D                      |
-            |               Enter either E or D                    |
-            ========================================================
-            """);
-    }
-
     /* Encodes the decrypted string using
      * a key. */
     public static String encode(String message) {
@@ -165,14 +149,6 @@ class ShiftCipher {
         return decoded;
     }
 
-    /* This method gets a String and create
-     * a new string in the backward order.
-     * For example if hello is passed to it
-     * it will return olleh */
-    public static String backward(String s) {
-        return new StringBuilder(s).reverse().toString();
-    }
-
     /* This method encodes an message by
      * using the message length and shifting i
      * from that length each iteration. */
@@ -222,8 +198,31 @@ class ShiftCipher {
         String backward = backward(encoded);
         return backward;
     }
-}
 
+    /* This method gets a String and create
+    * a new string in the backward order.
+    * For example if hello is passed to it
+    * it will return olleh */
+    public static String backward(String s) {
+        return new StringBuilder(s).reverse().toString();
+    }
+
+    /* This method displays a menu so
+    * that the user can chose between
+    * decode and encode */
+    public static void menu() {
+        System.out.println("""
+            ========================================================
+            | This program uses a cipher shift to encode and decode|
+            | the users input. The options you can select are:     |
+            |                   Encode  --> E                      |
+            |                   Encode2 --> EE                     |
+            |                   Decode  --> D                      |
+            |               Enter either E or D                    |
+            ========================================================
+            """);
+    }
+}
 
 /*==============================SELF GRADE===================================*/
 /*
