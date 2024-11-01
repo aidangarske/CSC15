@@ -1,17 +1,35 @@
+/* LetterGame.java
+ *
+ * This is a simple game that involves the users input and
+ * random varaibles. It creates a random number between 10-100
+ * or a random letter between A and Z depending on wha the user
+ * chooses
+ */
+
 import java.util.*;
 public class LetterGameGarske
 {
    //no code here
 }
 
-// DONE
+
 class LetterGame {
+    /* DONE
+    main function carries out intro
+    to the game and calls the main function. */
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         introduction();
         funGame(console);
     }
 
+    /* DONE
+    main function that carries out the
+    letterGuess and numberGuess functions
+    and also deals with the yes or no while
+    loop. instead of asking how many times
+    they want to play ask when they want to
+    end the game. */
     public static void funGame(Scanner console) {
         int numGames = 0;   //total number of the games the user played
         int totGuesses = 0;  //total guesses made by the user in all the games played
@@ -61,15 +79,14 @@ class LetterGame {
     public static String playAgain(Scanner console) {
         String response = "";
 
-        System.out.print("Do you want to play again(YES/NO)? ");
         /* Ask user till get "YES" or "NO" */
+        System.out.print("Do you want to play again(YES/NO)? ");
         while (!"YES".equals(response) && !"NO".equals(response)) {
             response = console.nextLine().toUpperCase();
         }
 
         return response;
     }
-
 
     /* DONE
     This method will generated a random
@@ -122,15 +139,16 @@ class LetterGame {
             }
         }
 
+        // print the amount of guesses needed to get right.
         System.out.println("You got it right in " + letterGuesses + " guesses");
         System.out.println();
         return letterGuesses;
     }
 
-
     /* DONE
-    method must be implemented by you. The code is similar to the letterGuess
-    method. Must use the same logic and formating*/
+    method must be implemented by you. The code is similar
+    to the letterGuess method. Must use the same logic and
+    formating */
     public static int numberGuess(Scanner console) {
         // Create a Random object
         Random rand = new Random();
@@ -153,7 +171,8 @@ class LetterGame {
             //increment numGuesses
             numGuesses++;
 
-            //call the method userRespond and store the result in the variable guess
+            //call the method userRespond and store
+            // the result in the variable guess
             guess = userRespondNumber(console);
 
             //if guess is equal to pick
@@ -177,53 +196,64 @@ class LetterGame {
             }
         }
 
+        // print the amount of guesses needed to get right.
         System.out.println("You got it right in " + numGuesses + " guesses");
         System.out.println();
         return numGuesses;
     }
 
-
     /* DONE
-    This method gets the user's respond. The user must enter a letter between 'A' and 'Z'
-    the method will keep asking until the user enters a valid input between 'A' and Z
-    a while loop must be used.
-    */
-    public static char userRespondLetter(Scanner console) {
+    This method gets the user's respond. The user must enter a letter
+    between 'A' and 'Z' the method will keep asking until the user
+    enters a valid input between 'A' and Z a while loop must be used. */
+    public static char userRespondLetter(Scanner kb) {
         char guess = ' ';
-        //1. declare a variable of type String and get the user's input
-        String input = console.nextLine();
+        boolean firstTry = true;
+        System.out.print("Guess a letter between A-Z: ");
 
-        //2.declare a variable of type char called guess and store the first letter of the user's respond in it. must use charAt() method
-        // Check if input is not empty
+        // 1. Declare a variable of type String and get the user's input
+        String input = kb.nextLine().toUpperCase();
+
+        // 2. Declare a variable of type char called guess and
+        // store the first letter of the user's response in it.
+        // Must use charAt() method.
+        //check make sure length is not 0
         if (input.length() != 0) {
             guess = input.charAt(0);
         }
 
-        //while the length of the user's guess is not equal to 1 or the first letter of user's guess is less than 'A' or guess is > 'Z'
-        while (input.length() != 1 || guess < 'A' || guess > 'Z') {
-            System.out.println("Invalid Charecter. Please enter a letter between A-Z.");
+        // While the length of the user's guess is not equal to
+        // 1 or the first letter of user's guess is less than 'A'
+        // or greater than 'Z'
+        while (input.length() != 1 || guess < 'A' || guess > 'Z' || guess == ' ') {
+            // Invalid input, prompt the user
+            if (!firstTry) {
+                System.out.println("Invalid Character. Please enter a letter between A-Z.");
+                System.out.print("Guess a letter between A-Z: ");
+            }
+            // after the first try set to false so empty char can be recognized
+            firstTry = false;
 
-            //prompt the user
-            System.out.print("Guess a letter between A-Z: ");
+            // Reset the variable guess to the new response
+            input = kb.nextLine().toUpperCase();
 
-            //reset the varibale guess to the new respond
-            input = console.nextLine();
-
-            // reset the variable of the first letter of the user's respond
-            guess = input.charAt(0);
+            // Reset the variable guess to the first letter
+            // of the user's response
+            if (input.length() != 0) {
+                guess = input.charAt(0);
+            }
         }
 
+        // Return the variable guess
         return guess;
     }
-
 
     /* DONE
     This method asks the user to enter a number between the min and max
     as long as the input is not between min and max, keep asking the user
     to enter a valid input. This is similar to the userRespondLetter.
-    refer to the sample output and for the prompts. This method must be created by you and must generated
-    a very similar output.
-    */
+    refer to the sample output and for the prompts. This method must be
+    created by you and must generated a very similar output. */
     public static int userRespondNumber(Scanner console) {
         int guess = 0;
 
@@ -249,8 +279,8 @@ class LetterGame {
         return guess;
     }
 
-
-    /* This method described the game being played.
+    /* DONE
+    This method described the game being played.
     Cretae your own description and not the provided description*/
     public static void introduction() {
         System.out.println("""
